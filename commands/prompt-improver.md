@@ -93,3 +93,13 @@ implementation and understand its responsibilities. Identify specific issues
 (duplication, unclear naming, tight coupling). Make incremental changes,
 running tests after each step to ensure behavior is unchanged.
 ```
+
+## Task-Type Tips
+
+| Task Type | Tip |
+|-----------|-----|
+| Bug fixes | Include reproduction steps if known. Specify whether this is a quick fix or needs root cause analysis. |
+| Feature implementation | Reference similar features in the codebase. Specify if tests are expected. |
+| Refactoring | State the goal (readability, performance, testability). Emphasize incremental changes. |
+| Code review | Specify focus areas (security, performance, style). Mention what to ignore. |
+| Testing | Specify test type (unit, integration, e2e). Reference existing test patterns. |
