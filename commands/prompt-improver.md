@@ -58,3 +58,38 @@ Identify which dimensions are weak or missing in the input prompt.
 ### Scope Control
 - Add explicit boundaries when missing
 - Break multi-part requests into phases if needed
+
+## Examples
+
+### Bug Fix
+```
+Original: "fix the login bug"
+
+Optimized:
+Fix the login bug. First, read the authentication-related files to understand
+the current implementation. Reproduce the bug to confirm the issue. Identify
+the root cause before making changes. Implement the fix and run existing tests
+to verify no regressions.
+```
+
+### Feature Implementation
+```
+Original: "add dark mode"
+
+Optimized:
+Implement dark mode for the application. First, check how theming/styling is
+currently handled in the codebase. Look for existing color variables or theme
+patterns. Implement the toggle and theme switching with minimal changes to
+existing components. Run tests and verify the UI renders correctly in both modes.
+```
+
+### Refactoring
+```
+Original: "clean up the user service"
+
+Optimized:
+Refactor the user service for improved maintainability. Read the current
+implementation and understand its responsibilities. Identify specific issues
+(duplication, unclear naming, tight coupling). Make incremental changes,
+running tests after each step to ensure behavior is unchanged.
+```
