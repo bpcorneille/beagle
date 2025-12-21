@@ -2,7 +2,7 @@
 
 ![Apollo 10 astronaut Thomas P. Stafford pats the nose of a stuffed Snoopy held by a member of the launch pad closeout crew](assets/Stafford_and_Snoopy.jpg)
 
-*Image: NASA, Public Domain. [Source](https://www.nasa.gov/multimedia/imagegallery/image_feature_572.html) | [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=119486770)*
+*Image: NASA, Public Domain. [Source](https://www.nasa.gov/multimedia/imagegallery/image_feature_572.html) | [Snoopy in Space](https://airandspace.si.edu/air-and-space-quarterly/winter-2024/snoopy-in-space)*
 
 Code review skills and verification workflows for Python, Go, React, and AI frameworks. Designed to complement [superpowers](https://github.com/obra/superpowers) with pre-push reviews and GitHub bot feedback handling.
 
@@ -147,11 +147,3 @@ curl -L https://github.com/anderskev/beagle/archive/refs/heads/main.tar.gz | tar
 ```
 
 See [Cursor documentation](https://cursor.com/docs/agent/chat/commands) for command usage.
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding skills and commands.
-
-## License
-
-[MIT](LICENSE)
