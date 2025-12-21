@@ -2,43 +2,27 @@
 
 Technology knowledge bases and development workflows for React, Python, Go, AI frameworks, and more.
 
-## What it does
-
-Extends Claude Code with specialized skills and commands for:
-
-- **Frontend development**: React Flow, React Router v7, Tailwind v4, shadcn/ui, Zustand
-- **Backend development**: Python, FastAPI, SQLAlchemy, Postgres, Pydantic AI
-- **Go development**: BubbleTea TUI, Wish SSH, Lipgloss, Prometheus
-- **AI frameworks**: LangGraph, Vercel AI SDK
-- **Testing**: Vitest, pytest, Go testing
-- **Code review**: Technology-specific review checklists and patterns
-- **Git workflows**: Commit, push, PR creation, release notes
-
 ## Installation
 
-1. Open your Claude Code settings file at `~/.claude/settings.json` (create it if it doesn't exist)
-
-2. Add the marketplace URL:
+Add the marketplace to `~/.claude/settings.json`:
 
 ```json
 {
-  "marketplaces": [
-    "https://github.com/anderskev/beagle"
-  ]
+  "marketplaces": ["https://github.com/anderskev/beagle"]
 }
 ```
 
-3. Restart Claude Code and install the plugin:
+Then restart Claude Code and run:
 
 ```
 /plugin install beagle
 ```
 
-See the [Claude Code settings documentation](https://docs.claude.com/en/docs/claude-code/settings) for more details on configuration.
+For more on Claude Code plugins, see [Plugin documentation](https://docs.claude.com/en/docs/claude-code/plugins).
 
 ## Skills
 
-Skills are model-invoked. Claude uses them automatically when relevant.
+Claude loads skills automatically when relevant. See [Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) for how skills work.
 
 ### Frontend
 
@@ -94,172 +78,49 @@ Skills are model-invoked. Claude uses them automatically when relevant.
 
 ## Commands
 
-Commands are user-invoked with `/beagle:<command>`.
+Run commands with `/beagle:<command>`. See [Slash commands](https://docs.claude.com/en/docs/claude-code/slash-commands) for how commands work.
 
 ### Code review
 
-```
-/beagle:review-backend
-```
-Reviews Python/FastAPI backend code. Detects technologies and loads relevant skills automatically.
-
-```
-/beagle:review-frontend
-```
-Reviews React/TypeScript frontend code with similar detection and loading.
-
-```
-/beagle:review-go
-```
-Reviews Go backend code. Detects BubbleTea, Wish, Prometheus and loads relevant skills.
-
-```
-/beagle:review-tui
-```
-Reviews BubbleTea TUI code with focus on Elm architecture patterns.
-
-```
-/beagle:review-plan <path/to/plan.md>
-```
-Reviews implementation plans before execution using 5 parallel agents analyzing parallelization, TDD adherence, type/API verification, library practices, and security.
-
-Options for all review commands:
-- `--parallel`: Spawn specialized subagents per technology area
+| Command | Description |
+|---------|-------------|
+| `/beagle:review-python` | Python/FastAPI code review with tech detection |
+| `/beagle:review-frontend` | React/TypeScript code review with tech detection |
+| `/beagle:review-go` | Go code review with BubbleTea/Wish/Prometheus detection |
+| `/beagle:review-tui` | BubbleTea TUI code review with Elm architecture focus |
+| `/beagle:review-plan <path>` | Review implementation plans before execution |
 
 ### Git workflows
 
-```
-/beagle:commit-push
-```
-Commits staged changes and pushes to remote.
+| Command | Description |
+|---------|-------------|
+| `/beagle:commit-push` | Commit staged changes and push |
+| `/beagle:create-pr` | Create PR with standardized template |
+| `/beagle:gen-release-notes <tag>` | Generate release notes since tag |
 
-```
-/beagle:create-pr
-```
-Creates a pull request with standardized description template.
-
-```
-/beagle:gen-release-notes <tag>
-```
-Generates release notes for changes since a given tag.
-
-### Skill development
-
-```
-/beagle:skill-builder
-```
-Creates Claude Code skills following official best practices.
-
-### Code analysis
-
-```
-/beagle:12-factor-apps-analysis
-```
-Analyzes codebase for 12-Factor App compliance.
-
-```
-/beagle:receive-feedback path/to/feedback.md
-```
-Processes code review feedback with verification-first discipline.
-
-### PR feedback
-
-```
-/beagle:fetch-pr-feedback [--bot <username>] [--pr <number>]
-```
-Fetches bot review comments from a PR and evaluates them. Defaults to CodeRabbit.
-
-```
-/beagle:respond-pr-feedback [--bot <username>] [--pr <number>] [--as <username>]
-```
-Posts replies to bot review comments and prompts to resolve threads.
-
-## Using with Cursor IDE
-
-The commands are also available for Cursor IDE. These are expanded versions with all skill content embedded, designed for Cursor's agent mode.
-
-### Setup
-
-Copy the `.cursor/commands/` folder to your project root:
-
-```bash
-# From your project directory
-curl -L https://github.com/anderskev/beagle/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 beagle-main/.cursor
-```
-
-Or clone and copy:
-
-```bash
-git clone --depth 1 https://github.com/anderskev/beagle.git /tmp/beagle
-cp -r /tmp/beagle/.cursor .
-rm -rf /tmp/beagle
-```
-
-### Usage
-
-In Cursor, type `/` in the Agent chat input to invoke commands:
+### Other
 
 | Command | Description |
 |---------|-------------|
-| `/review-backend` | Python/FastAPI code review |
-| `/review-frontend` | React/TypeScript code review |
-| `/review-go` | Go code review |
-| `/review-tui` | BubbleTea TUI code review |
-| `/review-plan` | Review implementation plans |
-| `/commit-push` | Conventional commit and push |
-| `/create-pr` | Create PR with template |
-| `/gen-release-notes` | Generate changelog |
-| `/skill-builder` | Create new skills |
-| `/12-factor-apps-analysis` | 12-Factor compliance check |
-| `/receive-feedback` | Process code review feedback |
-| `/fetch-pr-feedback` | Fetch bot review comments |
-| `/respond-pr-feedback` | Reply to bot comments |
+| `/beagle:skill-builder` | Create skills following best practices |
+| `/beagle:12-factor-apps-analysis` | Analyze codebase for 12-Factor compliance |
+| `/beagle:receive-feedback <path>` | Process code review feedback |
+| `/beagle:fetch-pr-feedback` | Fetch bot review comments from PR |
+| `/beagle:respond-pr-feedback` | Reply to bot review comments |
 
-### Updating
+## Cursor IDE
 
-To get the latest commands:
+Commands are also available for Cursor. Copy the `.cursor/commands/` folder to your project:
 
 ```bash
-# Re-run the setup command to overwrite with latest
 curl -L https://github.com/anderskev/beagle/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 beagle-main/.cursor
 ```
 
-## Repository structure
-
-```text
-beagle/
-├── .claude-plugin/
-│   └── plugin.json       # Plugin manifest
-├── .cursor/
-│   └── commands/         # Cursor IDE commands
-├── commands/             # Claude Code slash commands
-├── skills/               # Technology knowledge bases
-│   ├── react-flow/
-│   ├── python-code-review/
-│   ├── fastapi-code-review/
-│   ├── go-code-review/
-│   ├── bubbletea-code-review/
-│   └── ...
-└── docs/                 # Documentation
-```
-
-## Adding skills
-
-Each skill follows this structure:
-
-```text
-skill-name/
-├── SKILL.md              # Required: main skill file
-└── references/           # Optional: supporting docs
-    ├── topic-a.md
-    └── topic-b.md
-```
-
-See `/beagle:skill-builder` for guided skill creation.
+See [Cursor documentation](https://docs.cursor.com/) for command usage.
 
 ## Contributing
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding skills and commands.
 
 ## License
 

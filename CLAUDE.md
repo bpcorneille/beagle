@@ -10,67 +10,54 @@ Beagle is a Claude Code plugin providing technology knowledge bases and developm
 
 ```
 beagle/
-├── .claude-plugin/          # Plugin manifest and marketplace config
+├── .claude-plugin/          # Plugin manifest (plugin.json) and marketplace config
 ├── commands/                # User-invoked slash commands (14 files)
-├── skills/                  # Model-invoked agent skills (40 skills)
-│   ├── Frontend/            # React Flow, React Router v7, Tailwind v4, shadcn/ui, Zustand, Vitest
-│   ├── Backend (Python)/    # FastAPI, SQLAlchemy, PostgreSQL, pytest
-│   ├── Backend (Go)/        # BubbleTea, Wish SSH, Prometheus, Go testing
-│   ├── AI Frameworks/       # Pydantic AI (6), LangGraph (3), Vercel AI SDK
-│   └── Utilities/           # Docling, SQLite Vec, GitHub Projects, 12-Factor Apps
-└── docs/                    # Reference documentation and design plans
+├── skills/                  # Model-invoked agent skills (40 skills, flat structure)
+└── .cursor/commands/        # Cursor IDE versions (embedded skill content)
 ```
+
+**Skill categories** (all in flat `skills/` folder):
+- **Frontend**: react-flow*, react-router-v7, tailwind-v4, shadcn-ui*, zustand-state, vitest-testing, dagre-react-flow
+- **Backend Python**: python-code-review, fastapi-*, sqlalchemy-code-review, postgres-code-review, pytest-code-review
+- **Backend Go**: go-code-review, bubbletea-code-review, wish-ssh-code-review, prometheus-go-code-review, go-testing-code-review
+- **AI Frameworks**: pydantic-ai-* (6 skills), langgraph-* (3 skills), vercel-ai-sdk
+- **Utilities**: docling, sqlite-vec, github-projects, 12-factor-apps, ai-elements, agent-architecture-analysis, receive-feedback
+
+## Local Development
+
+Test the plugin during development:
+
+```bash
+# In Claude Code settings (~/.claude/settings.json)
+{
+  "plugins": ["/path/to/your/beagle"]
+}
+```
+
+Restart Claude Code after changes to reload. For skills, start a conversation using trigger keywords. For commands, run `/beagle:<command-name>`.
 
 ## Skills vs Commands
 
-**Skills** (in `skills/` folder):
-- Claude loads automatically when relevant keywords appear in conversation
-- Provide passive technology-specific guidance
-- Structure: `skill-name/SKILL.md` with optional `references/` folder
-- Frontmatter: `name`, `description` (include trigger keywords), optional `allowed-tools`
+See [Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) and [Slash commands](https://docs.claude.com/en/docs/claude-code/slash-commands) for general concepts.
 
-**Commands** (in `commands/` folder):
-- User invokes explicitly with `/beagle:<command-name>`
-- Provide step-by-step workflows for complex tasks
-- Structure: Single markdown file with frontmatter `description`
+**Skills** (`skills/` folder): Auto-loaded by Claude when relevant. Structure: `skill-name/SKILL.md` with optional `references/` folder.
+
+**Commands** (`commands/` folder): User-invoked with `/beagle:<name>`. Single markdown file per command.
 
 ## Creating New Skills
 
-Each skill folder contains:
-```
-skill-name/
-├── SKILL.md                 # Required: frontmatter + instructions (under 500 lines)
-└── references/              # Optional: supporting documentation
-```
+See [Agent Skills best practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices) for authoring guidance.
 
-Frontmatter format:
-```yaml
----
-name: skill-name-here          # lowercase-hyphen, max 64 chars
-description: What it does and when to use it. Include trigger keywords so Claude knows when to invoke.
----
-```
-
-Key principles:
-- Assume Claude is smart; only add context it wouldn't know
-- Use progressive disclosure: core content in SKILL.md, details in references
-- Include quick start examples and checklists for complex workflows
-- For code review skills: use consistent issue format `[FILE:LINE] ISSUE_TITLE`
+Beagle-specific:
+- Keep SKILL.md under 500 lines; use `references/` for details
+- Some skills use multiple root-level .md files (e.g., react-router-v7)
+- Code review skills: use format `[FILE:LINE] ISSUE_TITLE`
 
 ## Creating New Commands
 
-Commands are single markdown files in `commands/`:
-```yaml
----
-description: What the command does
----
-
-Step-by-step instructions...
-```
-
-Common patterns:
-- Start with context gathering (git diff, grep for tech detection)
-- Load relevant skills based on detected technologies
+Beagle command patterns:
+- Start with context gathering (git diff, tech detection)
+- Load relevant skills dynamically
 - Include output format templates
 - End with verification steps
 
@@ -78,7 +65,7 @@ Common patterns:
 
 | Command | Purpose |
 |---------|---------|
-| `review-backend` | Python/FastAPI code review with tech detection |
+| `review-python` | Python/FastAPI code review with tech detection |
 | `review-frontend` | React/TypeScript code review with tech detection |
 | `review-go` | Go code review with BubbleTea/Wish/Prometheus detection |
 | `review-tui` | BubbleTea TUI code review with Elm architecture focus |
@@ -102,3 +89,7 @@ Common patterns:
 ## No Build System
 
 This is a pure markdown plugin. No npm, no build, no tests. Validation is manual inspection of markdown syntax and YAML frontmatter.
+
+## Cursor IDE Support
+
+Cursor commands in `.cursor/commands/` are expanded versions with all skill content embedded (no dynamic skill loading). When updating skills, regenerate Cursor commands to keep them in sync.
