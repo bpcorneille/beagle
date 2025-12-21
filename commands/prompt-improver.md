@@ -103,3 +103,25 @@ running tests after each step to ensure behavior is unchanged.
 | Refactoring | State the goal (readability, performance, testability). Emphasize incremental changes. |
 | Code review | Specify focus areas (security, performance, style). Mention what to ignore. |
 | Testing | Specify test type (unit, integration, e2e). Reference existing test patterns. |
+
+## Step 3: Generate Output
+
+Produce output in this exact format:
+
+### Analysis
+
+[2-3 sentences identifying the prompt type and which dimensions are weak]
+
+### Improvements Applied
+
+- [Bullet list of specific transformations applied]
+
+### Optimized Prompt
+
+```
+[The improved prompt, ready to copy and use]
+```
+
+### Tips for This Prompt Type
+
+[1-2 sentences of relevant tips from the Task-Type Tips table]
