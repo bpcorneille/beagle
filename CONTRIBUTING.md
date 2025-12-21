@@ -86,7 +86,3 @@ Types: `feat`, `fix`, `docs`, `refactor`, `chore`
 - Includes working code examples
 - Follows the technology's official conventions
 - Avoids duplicating Claude's existing knowledge
-
-## Questions?
-
-Open a [discussion](https://github.com/anderskev/beagle/discussions).
