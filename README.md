@@ -24,7 +24,8 @@ For more on Claude Code plugins, see [Plugin documentation](https://docs.claude.
 
 Claude loads skills automatically when relevant. See [Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) for how skills work.
 
-### Frontend
+<details>
+<summary><strong>Frontend</strong></summary>
 
 | Skill | Triggers |
 |-------|----------|
@@ -35,7 +36,10 @@ Claude loads skills automatically when relevant. See [Agent Skills](https://docs
 | `zustand-state` | State management, middleware |
 | `dagre-react-flow` | Auto-layout for graphs |
 
-### Backend (Python)
+</details>
+
+<details>
+<summary><strong>Backend (Python)</strong></summary>
 
 | Skill | Triggers |
 |-------|----------|
@@ -45,7 +49,10 @@ Claude loads skills automatically when relevant. See [Agent Skills](https://docs
 | `postgres-code-review` | Postgres-specific patterns, JSONB, GIN |
 | `pytest-code-review` | Test patterns, fixtures, mocking |
 
-### Backend (Go)
+</details>
+
+<details>
+<summary><strong>Backend (Go)</strong></summary>
 
 | Skill | Triggers |
 |-------|----------|
@@ -55,7 +62,10 @@ Claude loads skills automatically when relevant. See [Agent Skills](https://docs
 | `prometheus-go-code-review` | Metrics, labels, instrumentation |
 | `go-testing-code-review` | Table-driven tests, mocking, parallel tests |
 
-### AI Frameworks
+</details>
+
+<details>
+<summary><strong>AI Frameworks</strong></summary>
 
 | Skill | Triggers |
 |-------|----------|
@@ -63,7 +73,10 @@ Claude loads skills automatically when relevant. See [Agent Skills](https://docs
 | `langgraph-*` | Graph architecture, implementation patterns |
 | `vercel-ai-sdk` | Streaming, use-chat, tools |
 
-### Utilities
+</details>
+
+<details>
+<summary><strong>Utilities</strong></summary>
 
 | Skill | Triggers |
 |-------|----------|
@@ -76,11 +89,14 @@ Claude loads skills automatically when relevant. See [Agent Skills](https://docs
 | `agent-architecture-analysis` | Analyzing agent system architecture |
 | `12-factor-apps` | 12-Factor App compliance patterns |
 
+</details>
+
 ## Commands
 
 Run commands with `/beagle:<command>`. See [Slash commands](https://docs.claude.com/en/docs/claude-code/slash-commands) for how commands work.
 
-### Code review
+<details>
+<summary><strong>Code review</strong></summary>
 
 | Command | Description |
 |---------|-------------|
@@ -90,7 +106,10 @@ Run commands with `/beagle:<command>`. See [Slash commands](https://docs.claude.
 | `/beagle:review-tui` | BubbleTea TUI code review with Elm architecture focus |
 | `/beagle:review-plan <path>` | Review implementation plans before execution |
 
-### Git workflows
+</details>
+
+<details>
+<summary><strong>Git workflows</strong></summary>
 
 | Command | Description |
 |---------|-------------|
@@ -98,7 +117,10 @@ Run commands with `/beagle:<command>`. See [Slash commands](https://docs.claude.
 | `/beagle:create-pr` | Create PR with standardized template |
 | `/beagle:gen-release-notes <tag>` | Generate release notes since tag |
 
-### Other
+</details>
+
+<details>
+<summary><strong>Other</strong></summary>
 
 | Command | Description |
 |---------|-------------|
@@ -107,6 +129,8 @@ Run commands with `/beagle:<command>`. See [Slash commands](https://docs.claude.
 | `/beagle:receive-feedback <path>` | Process code review feedback |
 | `/beagle:fetch-pr-feedback` | Fetch bot review comments from PR |
 | `/beagle:respond-pr-feedback` | Reply to bot review comments |
+
+</details>
 
 ## Cursor IDE
 
