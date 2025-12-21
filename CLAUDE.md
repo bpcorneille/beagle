@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Beagle is a Claude Code plugin providing technology knowledge bases and development workflows. It contains 40 skills (auto-loaded by Claude when relevant) and 14 commands (user-invoked via `/beagle:<command>`).
+Beagle is a Claude Code plugin providing code review skills and verification workflows. Designed to complement [superpowers](https://github.com/obra/superpowers) with pre-push reviews and GitHub bot feedback handling. It contains 40 skills (auto-loaded by Claude when relevant) and 14 commands (user-invoked via `/beagle:<command>`).
 
 ## Plugin Architecture
 

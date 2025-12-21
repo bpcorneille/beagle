@@ -1,6 +1,6 @@
 # Beagle - Claude Code Plugin
 
-Technology knowledge bases and development workflows for React, Python, Go, AI frameworks, and more.
+Code review skills and verification workflows for Python, Go, React, and AI frameworks. Designed to complement [superpowers](https://github.com/obra/superpowers) with pre-push reviews and GitHub bot feedback handling.
 
 ## Installation
 

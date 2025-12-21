@@ -12,9 +12,9 @@
     {
       "name": "beagle",
       "source": "./",
-      "description": "Technology knowledge bases and development workflows for React, Python, Go, AI frameworks, and more",
-      "version": "1.0.0",
-      "keywords": ["react", "python", "go", "ai", "langgraph", "pydantic", "tailwind", "vitest", "zustand"]
+      "description": "Code review skills and verification workflows for Python, Go, React, and AI frameworks",
+      "version": "1.1.0",
+      "keywords": ["code-review", "python", "go", "react", "ai", "langgraph", "pydantic", "fastapi", "bubbletea"]
     }
   ]
 }
